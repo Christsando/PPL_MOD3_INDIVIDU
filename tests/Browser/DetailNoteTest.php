@@ -26,7 +26,7 @@ class DetailNoteTest extends DuskTestCase
                     ->assertsee('Notes')
                     ->ClickLink('Notes')
                     ->assertPathIs('/notes')
-                    ->ClickLink('title')
+                    ->click('@detail-2')
                     ->assertPathIs('/note/2');
         });
     }

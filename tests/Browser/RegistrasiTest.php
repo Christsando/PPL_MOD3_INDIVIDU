@@ -10,6 +10,7 @@ class RegistrasiTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
+     * @group regist
      */
     public function testRegis(): void
     {
@@ -19,10 +20,10 @@ class RegistrasiTest extends DuskTestCase
                     ->assertSee('Register')
                     ->ClickLink('Register')
                     ->assertPathIs('/register')
-                    ->type('name','udin')
-                    ->type('email','udin@gmail.com')
-                    ->type('password','udin@12345')
-                    ->type('password_confirmation','udin@12345')
+                    ->type('name','uliq')
+                    ->type('email','uliq@gmail.com')
+                    ->type('password','uliq@12345')
+                    ->type('password_confirmation','uliq@12345')
                     ->press('REGISTER')
                     ->assertPathIs('/dashboard');
         });

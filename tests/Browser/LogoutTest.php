@@ -6,11 +6,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class NoteTest extends DuskTestCase
+class LogoutTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     * @group note
+     * @group logout
      */
     public function testExample(): void
     {
@@ -23,15 +23,10 @@ class NoteTest extends DuskTestCase
                     ->type('password','udin@12345')
                     ->press('LOG IN')
                     ->assertPathIs('/dashboard')
-                    ->assertsee('Notes')
-                    ->ClickLink('Notes')
-                    ->assertPathIs('/notes')
-                    ->ClickLink('Create Note')
-                    ->assertPathIs('/create-note')
-                    ->type('title','testcase1')
-                    ->type('description','testcase1')
-                    ->press('CREATE')
-                    ->assertPathIs('/notes');
+                    ->click('#click-dropdown', 5)
+                    ->pause(1000)
+                    ->clickLink('Log Out')
+                    ->assertPathIs('/');
         });
     }
 }
